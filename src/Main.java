@@ -37,7 +37,7 @@ public class Main {
 		}
 			    
 		//Print to file
-		FilePrinter fp = new FilePrinter("/Users/apple/Desktop/", "car-directory.txt", cars);
+		FilePrinter fp = new FilePrinter("/Users/apple/Desktop/", "car_directory.txt", cars);
 		fp.print();	
 	}
 }
