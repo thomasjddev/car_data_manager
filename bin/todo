@@ -1,0 +1,15 @@
+ToDo
+
+Make file selectable *done
+Search for fields
+Standardize variable column names
+Clean up column select logic *done
+Print formatted results to a file *done
+Validate data type on read
+Save data from file into local database
+Read file values for database credentials
+Read from Excel
+Detect changes and notify
+Randomize ID's and use numeric system for display
+Make number of columns a variable on read
+ 
