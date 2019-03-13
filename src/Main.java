@@ -8,6 +8,7 @@ public class Main {
 	    
 	    ArrayList<Car> cars;
 	    
+	    
 	    //Database Module
 	    try{ 
 	    	DatabaseConnection dbcon = new DatabaseConnection("localhost:8889", "car_listing", "root", "root"); 
@@ -24,7 +25,6 @@ public class Main {
 	    }  
 	     
 	    	 
-		
 			    
 	    //Read from file
 		FileReader fr = new FileReader("/Users/apple/Documents/", "file_example.txt");
