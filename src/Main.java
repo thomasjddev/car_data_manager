@@ -2,6 +2,7 @@ import java.io.*;
 import java.sql.*;
 import java.util.*;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -45,8 +46,11 @@ public class Main {
 		fp.print();	
 		
 		
+		System.out.print("\n--------\n");
+		
+		//Excel Module
 		try {
-            FileInputStream file = new FileInputStream(new File(".xslx"));
+            FileInputStream file = new FileInputStream(new File("/Users/apple/Desktop/test.xlsx"));
 
             //Create Workbook instance
             XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -56,9 +60,31 @@ public class Main {
 
             //Iterate through each row
             Iterator<Row> rowIterator = sheet.iterator();
-		} catch (Exception e) {
-			System.out.println(e);		
-		}
-        	    		
+           
+            //Reset indexes on new file
+			int current_row = 1;
+		    int iterator = 0;
+		    
+		    
+            while (rowIterator.hasNext())
+            {
+                Row row = rowIterator.next();
+                //For each row, iterate through all the columns
+                Iterator<Cell> cellIterator = row.cellIterator();
+				
+                while (cellIterator.hasNext()) 
+                {
+               		//Cell cell = cellIterator.next();
+               		System.out.print(cellIterator.next() + " ");
+	    	        iterator++;             
+	        	}
+	        	current_row++;
+	        	System.out.print("\n");
+                }
+            file.close();     
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	    		
 	}
 }
