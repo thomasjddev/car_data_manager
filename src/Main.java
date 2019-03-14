@@ -13,8 +13,69 @@ public class Main {
 	    
 	    ArrayList<Car> cars;
 	    
-	    
-	    //Database Module
+	    //UI Module
+	    int menuSelect = 0;
+	    Scanner in = new Scanner(System.in);
+	   
+		System.out.print("Welcome to the Car Data Manager\n");	
+		System.out.print("--------\n\n");
+				   
+		
+		System.out.print("Please choose an option...\n\n");
+		
+		System.out.print("1. Read a file\n");
+		System.out.print("2. Read database\n");
+		System.out.print("3. Enter new data\n");
+		System.out.print("4. search records\n");
+				    
+		System.out.print("\nPlease enter choice: ");
+		menuSelect = in.nextInt();
+		System.out.print("\n\n\n\n\n\n\n\n\n\n");
+		
+		switch(menuSelect){
+			case 1:
+				System.out.print("Please choose an option...\n\n");
+				
+				System.out.print("1. Write to screen\n");
+				System.out.print("2. Write to file\n");
+				System.out.print("3. Write to database\n");
+				
+				System.out.print("\nPlease enter choice: ");
+				menuSelect = in.nextInt();
+				System.out.print("\n\n\n\n\n\n\n\n\n\n");
+				
+				switch(menuSelect){
+					case 1:
+						break;
+					case 2:
+						System.out.print("Please choose an option...\n\n");
+						
+						System.out.print("1. Use test file\n");
+						System.out.print("2. Enter file name\n");
+						
+						System.out.print("\nPlease enter choice: ");
+						menuSelect = in.nextInt();
+						System.out.print("\n\n\n\n\n\n\n\n\n\n");
+						break;
+					case 3:
+						break;
+				}					
+				break;
+			
+			case 2:
+				System.out.print("2. Read Database\n");
+				break;
+			
+			case 3:
+				System.out.print("3. Enter New Data\n");
+				break;
+			
+			case 4:
+				System.out.print("4. Search Records\n");
+				break;		
+		}
+			    
+		//Database Module
 	    try{ 
 	    	DatabaseConnection dbcon = new DatabaseConnection("localhost:8889", "car_listing", "root", "root"); 
 	    	Connection con = dbcon.getConnection();
@@ -28,9 +89,7 @@ public class Main {
 	    }catch(Exception e){ 
 	    	System.out.println(e);
 	    }  
-	     
-	    	 
-			    
+	    		   
 	    //Read from file
 		FileReader fr = new FileReader("/Users/apple/Documents/", "file_example.txt");
 		cars = fr.read();
